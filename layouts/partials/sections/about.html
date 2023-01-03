@@ -41,14 +41,19 @@
         </ul>
       </div>
       {{ if .resume }}
-      <a href="{{ .resume | relURL }}" title="{{ i18n "resume"}}" target="#"
-        ><button class="btn btn-dark">{{ i18n "resume"}}</button></a
-      >
+      <a href="{{ .resume | relURL }}" title="{{ i18n .resume }}" target="#">
+        <button class="btn btn-dark">{{ i18n "resume"}}</button>
+      </a>
       {{ end }}
       {{ range .resourceLinks }}
-      <a href="{{ .url | relURL }}" title="{{ .title }}" target="#"
-        ><button class="btn btn-dark">{{ .title }}</button></a
-      >
+      <a href="{{ .url | relURL }}" title="{{ .title }}" target="#">
+        <button class="btn btn-dark">{{ .title }}</button>
+      </a>
+      {{ end }}
+      {{ if .topLink }}
+      <a href="{{ "/" }}" title="{{ "top" }}" target="#" >
+      <button class="btn btn-dark">{{ "top" }}</button>
+      </a>
       {{ end }}
     </div>
     <!-- soft skills circular-progressbar -->
@@ -65,4 +70,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
