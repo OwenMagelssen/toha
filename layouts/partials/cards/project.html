@@ -27,6 +27,15 @@
           </div>
         </div>
       </a>
+      <a class="d-flex justify-content-center" href="{{ if .repo }}{{ .repo }}{{ else if .url }}{{ .url }}{{ else }}javascript:void(0){{ end }}" {{ if or .repo .url }}target="_blank" rel="noopener"{{ end }}>
+        {{ if .thumb }}
+          {{ $thumbImage:= resources.Get .thumb}}
+          {{ if $thumbImage }}
+            {{ $thumbImage = $thumbImage.Fit "99999x99999" }}
+            <img class="card-thumb" src="{{ $thumbImage.RelPermalink }}" alt="{{ .name }}" />
+          {{ end }}
+        {{ end }}
+      </a>
       <div class="card-body text-justify pt-1 pb-1">
         <p>{{ .summary | markdownify }}</p>
         <!-- Display project card technology tags -->

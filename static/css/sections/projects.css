@@ -9,6 +9,10 @@
   margin-right: 0.5rem;
 }
 
+.projects-section .card .card-thumb {
+
+}
+
 .card .card-header .sub-title span:nth-child(1) {
   float: left;
 }
