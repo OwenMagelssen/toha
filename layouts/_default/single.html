@@ -36,12 +36,14 @@
 {{ end }}
 
 {{ define "content" }}
-<section class="content-section" id="content-section">
+<section class="content-section" style="margin: auto" id="content-section">
   <div class="content">
     <div class="container p-0 read-area">
       <!--Hero Area-->
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ partial "helpers/get-hero.html" . }});'>
       </div>
+
+      <br>
 
       <!--Content Start-->
 <!--      <div class="page-content">-->
@@ -50,8 +52,6 @@
 <!--          <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>-->
 <!--          <p>{{ .Page.Date | time.Format ":date_full" }}</p>-->
 <!--        </div>-->
-
-        <br>
 
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
@@ -70,11 +70,11 @@
           {{ .Page.Content }}
         </div>
 
-        <br>
+      <br>
 
         <!-- Share or Contribute -->
 <!--        <div class="row pl-3 pr-3">-->
-<!--        &lt;!&ndash;Social Media Share Buttons&ndash;&gt;-->
+        <!--Social Media Share Buttons-->
 <!--        <div class="col-md-6 share-buttons">-->
 <!--        {{ if site.Params.features.blog.shareButtons }}-->
 <!--            <strong>{{ i18n "share_on" }}:</strong>-->
@@ -151,24 +151,24 @@
 <!--              </a>-->
 <!--          </div>-->
 <!--        {{ end }}-->
-        </div>
+<!--        </div>-->
 
 
 
       <!---Next and Previous Navigator -->
-      <hr />
-        {{ partial "navigators/next-prev-navigator.html" . }}
-      <hr />
+<!--      <hr />-->
+<!--        {{ partial "navigators/next-prev-navigator.html" . }}-->
+<!--      <hr />-->
 
       <!----- Add comment support  ----->
-      {{ if site.Params.features.comment.enable }}
-        {{ partial "comments.html" site.Params.features.comment }}
-      {{ end }}
+<!--      {{ if site.Params.features.comment.enable }}-->
+<!--        {{ partial "comments.html" site.Params.features.comment }}-->
+<!--      {{ end }}-->
 
       <!-- Keep backward compatibility with old config.yaml -->
-      {{ if site.DisqusShortname }}
-        {{ partial "comments/disqus.html" (dict (slice "disqus" "shortName")  site.DisqusShortname) }}
-      {{ end }}
+<!--      {{ if site.DisqusShortname }}-->
+<!--        {{ partial "comments/disqus.html" (dict (slice "disqus" "shortName")  site.DisqusShortname) }}-->
+<!--      {{ end }}-->
 
       </div>
     </div>

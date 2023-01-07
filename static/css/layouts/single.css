@@ -16,8 +16,8 @@ body {
 }
 
 .content-section {
-  flex: 100%;
-  max-width: 100%;
+  flex: 60%;
+  max-width: 60%;
   order: 2;
   /* background-color: lightseagreen; */
   padding: 0;
